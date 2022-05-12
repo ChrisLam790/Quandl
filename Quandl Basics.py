@@ -1,4 +1,5 @@
 from re import I
+from sqlite3 import Row
 from more_itertools import collapse
 import quandl as qd
 import pandas as pd
@@ -29,3 +30,19 @@ df.to_csv("GDP.csv")
 print("\nFacebook Annual Report Data\n")
 my_data = qd.get("WIKI/FB", collapse= "annual")
 print(my_data)
+
+## US Natural Rate of Unemplyment
+print("\nUS Natural Rate of Unemployment\n")
+my_data = qd.get("FRED/NROUST")
+print(my_data)
+
+## SP500 Div Yield
+print("\nSP500 Div Yield\n")
+my_data = qd.get("MULTPL/SP500_DIV_YIELD_MONTH")
+print(my_data)
+
+## Big Mac Index - US
+print("\nBig Mac Index - US")
+my_data = qd.get("ECONOMIST/BIGMAC_USA")
+print(my_data)
+
