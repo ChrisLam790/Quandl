@@ -1,4 +1,5 @@
 from re import I
+from more_itertools import collapse
 import quandl as qd
 import pandas as pd
 import numpy as np
@@ -23,3 +24,8 @@ print(my_data)
 
 df = pd.DataFrame(my_data, columns=["Date", "Value"])
 df.to_csv("GDP.csv")
+
+## Facebook Annual Report Data
+print("\nFacebook Annual Report Data\n")
+my_data = qd.get("WIKI/FB", collapse= "annual")
+print(my_data)
